@@ -1,0 +1,29 @@
+seed: 42
+batch_size: 8
+epochs: 2
+learning_rate: 1e-3
+data:
+  train_dir: data/train
+  val_dir: data/val
+  test_dir: data/test
+model:
+  latent_dim: 64
+  hopf_units: 64
+  hopf_dt: 0.01
+  hopf_alpha: 1.0
+  hopf_beta: 0.1
+  hopf_cfg:
+    num_oscillators: 32
+    coupling: 0.5
+    frequency: 1.0
+    hopf_units: 64
+    hopf_dt: 0.01
+    hopf_alpha: 0.9
+    hopf_beta: 0.3
+  
+optimizer:
+  type: Adam
+  weight_decay: 1e-5
+scheduler:
+  type: CosineAnnealingLR
+  T_max: 10
